@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Letter for Douaa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #1f080c 0%, #0a0204 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Envelope Styles */
+    .envelope-wrapper {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      background: #2a0e14;
+      border-radius: 12px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(183, 110, 121, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: all 0.6s ease;
+    }
+
+    .seal {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #a82333, #5e0d17);
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #d4af37;
+      font-family: 'Alex Brush', cursive;
+      font-size: 26px;
+      font-weight: bold;
+      border: 2px dashed #871824;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    }
+
+    /* Button */
+    .open-btn {
+      margin-top: 30px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+      color: #1a0508;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Vintage Paper Letter Box */
+    .letter-card {
+      display: none;
+      width: 100%;
+      background: #f4e8c1;
+      background-image: radial-gradient(#e2d2a4 1px, transparent 0);
+      background-size: 16px 16px;
+      border-radius: 4px;
+      padding: 40px 30px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8), inset 0 0 50px rgba(139, 90, 43, 0.3);
+      border: 1px solid #c8b27a;
+      position: relative;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .letter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 2px solid rgba(139, 90, 43, 0.2);
+      margin: 10px;
+      pointer-events: none;
+    }
+
+    .salutation {
+      font-family: 'Alex Brush', cursive;
+      font-size: 38px;
+      color: #5c1d24;
+      margin-bottom: 20px;
+    }
+
+    .message-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #2b1a13;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .signature {
+      font-family: 'Alex Brush', cursive;
+      font-size: 32px;
+      color: #8b2635;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- View 1: Envelope & Single Button -->
+    <div id="envelopeView" style="width: 100%; text-align: center;">
+      <div class="envelope-wrapper">
+        <div class="seal">Douaa</div>
+      </div>
+      <button class="open-btn" onclick="openLetter()">OPEN MY LETTER</button>
+    </div>
+
+    <!-- View 2: Vintage Letter -->
+    <div id="letterView" class="letter-card">
+      <div class="salutation">Dearest Douaa,</div>
+      <div class="message-body">
+        I am writing this with a heart full of deep, genuine regret... I am so terribly sorry for the mistake this morning. Seeing even the slightest hint of hurt in your eyes because of me breaks my heart completely.
+        <br><br>
+        I want you to know and be forever certain, that you are not just someone I love—you are the only woman in this world I truly adore with all my soul, and the only one I have ever dreamed of sharing my entire life with. No one else could ever hold a candle to you or touch my heart the way you do.
+        <br><br>
+        You are my whole world, and I hope from the bottom of my heart that you can forgive me... ❤️
+      </div>
+      <div class="signature">Forever Yours</div>
+    </div>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('envelopeView').style.display = 'none';
+      document.getElementById('letterView').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
